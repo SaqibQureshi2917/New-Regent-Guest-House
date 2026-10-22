@@ -1,0 +1,68 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgba(13, 22, 32, 0.58);
+  backdrop-filter: blur(4px);
+  animation: fade-in 140ms ease-out;
+}
+
+.dialog {
+  position: relative;
+  width: min(440px, 100%);
+  padding: 2rem;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: var(--surface);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+  animation: rise-in 180ms ease-out;
+}
+
+.close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  color: var(--text-muted);
+  background: var(--bg-secondary);
+}
+.close:hover { color: var(--text); }
+
+.icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 1.1rem;
+  border-radius: 14px;
+}
+.danger { color: var(--danger); background: rgba(192, 57, 43, 0.12); }
+.primary { color: var(--primary); background: color-mix(in srgb, var(--primary) 12%, transparent); }
+
+.dialog h2 { margin: 0; color: var(--text); font-size: 1.25rem; }
+.dialog p { margin: 0.65rem 0 1.6rem; color: var(--text-secondary); line-height: 1.6; }
+
+.actions { display: flex; justify-content: flex-end; gap: 0.75rem; }
+.cancel, .confirm { min-height: 42px; padding: 0.65rem 1rem; border-radius: 10px; font-weight: 600; }
+.cancel { color: var(--text); background: var(--bg-secondary); }
+.cancel:hover { background: var(--border); }
+.confirm { color: #fff; background: var(--primary); }
+.confirm:hover { filter: brightness(0.94); }
+.confirmDanger { background: var(--danger); }
+.cancel:disabled, .confirm:disabled, .close:disabled { opacity: 0.65; cursor: wait; }
+
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes rise-in { from { opacity: 0; transform: translateY(8px) scale(0.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
+
+@media (max-width: 480px) {
+  .dialog { padding: 1.5rem; }
+  .actions { flex-direction: column-reverse; }
+  .cancel, .confirm { width: 100%; }
+}

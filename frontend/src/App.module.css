@@ -1,0 +1,10 @@
+.root { }
+.root:global(.app-wrapper) {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.root:global(.app-wrapper) main {
+  flex: 1;
+}

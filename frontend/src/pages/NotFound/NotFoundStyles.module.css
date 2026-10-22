@@ -1,0 +1,22 @@
+.root { }
+.root:global(.not-found-page) {
+  min-height: 80vh;
+}
+
+.root :global(.not-found-title) {
+  font-size: 6rem;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1;
+}
+
+.root :global(.not-found-subtitle) {
+  font-size: 1.5rem;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.root :global(.not-found-desc) {
+  color: var(--text-secondary);
+}
+

@@ -1,0 +1,161 @@
+.root { }
+.root :global(.logo) { color: var(--primary); text-decoration: none; }
+.root :global(.logo-icon) { color: var(--primary); }
+.root :global(.logo-text) {
+  display: flex;
+  flex-direction: column;
+  gap: 0.18rem;
+  font-family: 'Bodoni MT', 'Didot', 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+  line-height: 1;
+  color: var(--text);
+}
+.root :global(.logo-tagline) {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  font-size: 0.55rem;
+  font-weight: 650;
+  letter-spacing: 0.22em;
+  color: var(--text-muted);
+}
+.root:global(.footer) {
+  background: var(--bg-secondary);
+  padding: 3rem 0 1rem;
+  margin-top: auto;
+}
+
+:global(.footer-grid) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+:global(.footer-brand) {
+  flex: 1 1 300px;
+}
+
+:global(.footer-desc) {
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.root :global(.social-links) {
+  display: flex;
+  align-items: center;
+}
+
+.root :global(.social-link) {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  transition: var(--transition);
+}
+
+.root :global(.social-link):hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+:global(.footer-section) {
+  flex: 1 1 200px;
+}
+
+:global(.footer-title) {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+:global(.footer-links) {
+  list-style: none;
+}
+
+:global(.footer-links) li {
+  margin-bottom: 0.75rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+:global(.footer-links) a {
+  color: var(--text-secondary);
+}
+
+:global(.footer-links) a:hover {
+  color: var(--primary);
+}
+
+:global(.footer-bottom) {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  gap: 1rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+:global(.footer-legal) a {
+  color: var(--text-muted);
+}
+
+:global(.footer-legal) a:hover {
+  color: var(--primary);
+}
+
+@media (max-width: 768px) {
+  .root :global(.stats-grid) {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .root :global(.stat-item) {
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .root :global(.hero-title) {
+    font-size: 2.2rem;
+  }
+  
+  .root :global(.carousel-main) {
+    height: 250px;
+  }
+  
+  .root :global(.revenue-chart) {
+    height: 180px;
+  }
+  
+  .root :global(.dashboard-tabs) {
+    overflow-x: auto;
+  }
+  
+  :global(.footer-bottom) {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .root :global(.rooms-grid) {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .root :global(.room-card-wrapper) {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+

@@ -1,0 +1,283 @@
+.root { }
+.root :global(.dashboard-page) {
+  min-height: calc(100vh - 70px);
+}
+
+.root :global(.dashboard-header) {
+  margin-bottom: 2rem;
+}
+
+.root :global(.dashboard-title) {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.root :global(.dashboard-subtitle) {
+  color: var(--text-secondary);
+}
+
+.root :global(.stats-row) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.root :global(.stat-card) {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.root :global(.stat-icon-bg) {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: rgba(201, 169, 110, 0.15);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.root :global(.stat-card) h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.root :global(.stat-card) p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.root :global(.dashboard-tabs) {
+  display: flex;
+  gap: 0.5rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 1.5rem;
+}
+
+.root :global(.tab-btn) {
+  padding: 0.75rem 1.25rem;
+  background: none;
+  color: var(--text-secondary);
+  font-weight: 500;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.root :global(.tab-btn):global(.active) {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+.root :global(.booking-card) {
+  transition: var(--transition);
+}
+
+.root :global(.booking-card):hover {
+  box-shadow: 0 4px 20px var(--shadow-strong);
+}
+
+.root :global(.booking-thumb) {
+  width: 80px;
+  height: 60px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.root :global(.booking-id) {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.root :global(.booking-dates) {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.root :global(.booking-price) {
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.root :global(.table-responsive) {
+  overflow-x: auto;
+}
+
+.root :global(.data-table) {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.root :global(.data-table) th {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  border-bottom: 2px solid var(--border);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.root :global(.data-table) td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+
+.root :global(.data-table) tr:hover {
+  background: var(--bg-secondary);
+}
+
+.root :global(.table-thumb) {
+  width: 48px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+}
+
+.root :global(.btn-icon) {
+  background: none;
+  padding: 0.5rem;
+  color: var(--text-muted);
+  border-radius: var(--radius-sm);
+}
+
+.root :global(.btn-icon):hover {
+  background: rgba(192, 57, 43, 0.1);
+  color: var(--danger);
+}
+
+.root :global(.profile-section) {
+  max-width: 500px;
+}
+
+.root :global(.profile-header) {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.root :global(.avatar-large) {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+}
+
+.root :global(.profile-row) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.root :global(.payment-badge) {
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.root :global(.payment-badge):global(.active) {
+  background: var(--primary);
+  color: #fff;
+}
+
+.root :global(.booking-summary) {
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.root :global(.booking-summary) p {
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+}
+
+.root :global(.empty-state) {
+  padding: 3rem;
+  text-align: center;
+}
+
+.root :global(.empty-state) h3 {
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.root :global(.empty-state) p {
+  color: var(--text-secondary);
+}
+
+.root :global(.loading-spinner) {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--border);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  .root to { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+  .root :global(.stats-grid) {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .root :global(.stat-item) {
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .root :global(.hero-title) {
+    font-size: 2.2rem;
+  }
+  
+  .root :global(.carousel-main) {
+    height: 250px;
+  }
+  
+  .root :global(.revenue-chart) {
+    height: 180px;
+  }
+  
+  .root :global(.dashboard-tabs) {
+    overflow-x: auto;
+  }
+  
+  .root :global(.footer-bottom) {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .root :global(.rooms-grid) {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .root :global(.room-card-wrapper) {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
