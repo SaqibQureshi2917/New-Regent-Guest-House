@@ -18,10 +18,22 @@ if (dnsServers.length) {
 const app = express();
 
 // Security middleware
+const configuredFrontendOrigins = (process.env.FRONTEND_URLS || process.env.FRONTEND_URL || '')
+  .split(',').map((origin) => origin.trim()).filter(Boolean);
+const allowedFrontendOrigins = new Set([
+  ...configuredFrontendOrigins,
+  'https://new-regent.vercel.app',
+  'http://localhost:3000',
+  'http://127.0.0.1:3000',
+  'http://localhost:5173',
+  'http://127.0.0.1:5173'
+]);
 app.use(helmet());
 app.use(cors({
-  origin: (process.env.FRONTEND_URLS || process.env.FRONTEND_URL || 'http://localhost:3000')
-    .split(',').map((origin) => origin.trim()).filter(Boolean),
+  origin: (origin, callback) => {
+    // Requests without an Origin header are server-to-server or direct health checks.
+    callback(null, !origin || allowedFrontendOrigins.has(origin));
+  },
   credentials: true
 }));
 
